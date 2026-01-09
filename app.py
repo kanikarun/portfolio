@@ -2,6 +2,8 @@ import requests
 from flask import Flask, render_template, request, redirect, flash
 
 app = Flask(__name__)
+app.run(debug=True)
+
 app.secret_key = "my_super_secret_key_060606062222!@#"
 
 BOT_TOKEN = "8284604028:AAGlxZajz6L1mQv5JBw9QkczLpsAmpTF_7E"
@@ -53,4 +55,5 @@ def contact():
 def cv():
     return render_template("CV.html")
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
