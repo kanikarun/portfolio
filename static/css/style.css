@@ -1,0 +1,425 @@
+/* Add to your CSS */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+  padding-top: 70px; /* adjust to navbar height */
+   padding-bottom: 60px; /* match footer height */
+}
+/* Animated background */
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* very important */
+  background: radial-gradient(circle at top, #0f172a, #000000);
+}
+
+/* Make main content readable */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+    flex: 1; /* take all available space */
+}
+
+
+.bg-purple {
+  background-color: #6f42c1;
+}
+
+
+.contact-page {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  min-height: 100vh;       /* full screen height */
+  padding: 20px;
+}
+
+
+/* Inputs and textarea */
+.glass-form input,
+.glass-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.glass-form input::placeholder,
+.glass-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.glass-form input:focus,
+.glass-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Submit button smaller and centered */
+.glass-form button {
+  padding: 12px 35px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(18, 96, 238, 0.5);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.glass-form button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Contact links */
+.contact-links p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+/* Glassy button */
+.glass-form button {
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(23, 94, 225, 0.51);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.glass-form button:hover {
+  background: rgb(23, 94, 225);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+
+/* Grid container */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, auto);  /* 2 rows */
+  gap: 40px;                             /* space between cards */
+  max-width: 1000px;                     /* container width */
+  margin: 0 auto;                        /* center horizontally */
+  padding: 80px 20px;
+}
+
+/* Card container */
+.project-card {
+   animation: floatCard 4s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow:
+    0 4px 10px rgba(0,102,255,0.15),
+    0 4px 20px rgba(255,0,102,0.15),
+    0 4px 25px rgba(128,0,255,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* base floating animation */
+@keyframes floatCard {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+/* Card 1 */
+.project-card:nth-child(1) {
+  animation-delay: 0s;
+  animation-duration: 4s;
+}
+
+/* Card 2 */
+.project-card:nth-child(2) {
+  animation-delay: 1s;
+  animation-duration: 5s;
+}
+
+/* Card 3 */
+.project-card:nth-child(3) {
+  animation-delay: 0.5s;
+  animation-duration: 4.5s;
+}
+
+/* Card 4 */
+.project-card:nth-child(4) {
+  animation-delay: 1.5s;
+  animation-duration: 5.5s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 8px 20px rgba(0,102,255,0.3),
+    0 10px 25px rgba(255,0,102,0.3),
+    0 12px 30px rgba(128,0,255,0.3);
+}
+
+/* Card heading */
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Card text */
+.project-card p {
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Links inside card */
+.project-card a {
+  display: flex;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: #007bff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-card a:hover {
+  background: linear-gradient(90deg, #0066ff, #ff0066, #8000ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-color: currentColor;
+}
+
+/* Badge-like small text */
+.border-text {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  padding: 2px 6px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.border-text:hover {
+  border-color: #007bff;
+}
+
+/* Subtle floating animation for headings */
+.gradient-text.floating-text {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  overflow: visible !important;
+
+  box-shadow:
+    0 12px 40px rgba(0, 79, 255, 0.81),
+    0 0 20px rgba(255, 30, 30, 0.76),
+    inset 0 0 1px rgba(181, 53, 255, 0.91);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 22px 65px  rgba(0, 79, 255, 0.81),
+    0 0 35px rgba(255, 30, 30, 0.76),
+    inset 0 0 1px rgba(181, 53, 255, 0.91);
+}
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 523px;
+  cursor: pointer;
+}
+
+
+.badge {
+  transition: transform 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(0.5);
+}
+
+.profile-pic {
+    border: 5px solid; /* thickness of border */
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(90deg, #175ee1, #ff0066, #8000ff); /* gradient colors */
+    transition: transform 0.3s ease;
+}
+
+/* Hover animation to scale up slightly */
+.profile-pic:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    align-content: center;
+}
+.card-body:hover{
+    transform: scale(1.2);
+}
+.gradient-text {
+    background: linear-gradient(90deg, #0066ff, #ff0066, #8000ff); /* blue → red → purple */
+    -webkit-background-clip: text; /* clip gradient to text */
+    -webkit-text-fill-color: transparent; /* make text itself transparent to show gradient */
+    display: inline-block;
+
+}
+
+.floating-text {
+
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-5px); } /* float up */
+    100% { transform: translateY(0); }
+}
+
+
+  /* Images with uniform size and border */
+  .bordered-image {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid rgba(90, 0, 134, 0.91); /* blue border, change color if you want */
+    border-radius: 10px;
+  }
+
+  /* Thin border style for text */
+.border-text {
+  border: 1px solid #ccc;   /* thin light gray border */
+  border-radius: 5px;       /* rounded corners */
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.border-text:hover {
+  border-color: #007bff;    /* highlight border on hover */
+}
+
+
+
+
+
+/* Glassy popup */
+.swal-glass {
+  padding: 30px;
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    color: #fff !important;
+    text-align: center;
+}
+
+/* Remove the default gray circle and keep only glowing outline */
+.swal2-icon-success {
+    background: transparent !important; /* remove gray fill */
+    border: 2px solid #A7FF83;          /* glowing green border */
+    border-radius: 50%;
+    box-shadow: 0 0 15px #A7FF83, 0 0 25px #4CAF50, 0 0 35px #BFFF90;
+}
+
+/* Make check mark bright */
+.swal2-icon-success::before,
+.swal2-icon-success::after {
+    background-color: #A7FF83 !important; /* neon green check */
+}
+
+/* Title text */
+.swal2-title {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+
+
+.typing-text {
+
+  padding: 10px;
+  font-size: 100px;
+  white-space: nowrap;        /* Keep text in one line */
+  overflow: hidden;           /* Hide the hidden letters */
+  width: 0;                   /* Start hidden */
+
+  animation: typing 3s steps(26, end) forwards; /* Typing animation */
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 26ch; }
+  /* Width = number of characters in your text */
+}
+
+
