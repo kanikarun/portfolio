@@ -9,16 +9,45 @@ body {
   padding-top: 70px; /* adjust to navbar height */
    padding-bottom: 60px; /* match footer height */
 }
-/* Animated background */
+
+
 #particles-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* very important */
-  background: radial-gradient(circle at top, #0f172a, #000000);
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+
+  background:
+    /* Main sun glow */
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(150, 90, 255, 0.55) 0%,
+      rgba(255, 90, 140, 0.45) 15%,
+      rgba(0, 170, 255, 0.35) 32%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+
+    /* Soft ambient aura */
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 80, 255, 0.18),
+      transparent 65%
+    ),
+
+    /* Deep space base */
+    radial-gradient(circle, #140b2d, #000000);
 }
+
+@keyframes sunPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+#particles-bg {
+  animation: sunPulse 8s ease-in-out infinite;
+}
+
+
 
 /* Make main content readable */
 main {
@@ -119,17 +148,15 @@ main {
 }
 
 
-/* Grid container */
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, auto);  /* 2 rows */
-  gap: 40px;                             /* space between cards */
-  max-width: 1000px;                     /* container width */
-  margin: 0 auto;                        /* center horizontally */
+  grid-template-columns: repeat(2, 1fr); /* default desktop */
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 80px 20px;
 }
-
 /* Card container */
 .project-card {
    animation: floatCard 4s ease-in-out infinite;
@@ -200,17 +227,26 @@ main {
 
 /* Links inside card */
 .project-card a {
-  display: flex;
+  display: inline-flex;          /* ✔ inline, not full-width */
+  align-items: center;
+  justify-content: center;
   margin-right: 10px;
-  margin-top: 5px;
-  padding: 4px 10px;
+  margin-top: 8px;
+  padding: 6px 14px;
   font-size: 0.9rem;
   font-weight: 500;
-  border-radius: 5px;
+  border-radius: 20px;           /* nicer pill look */
   border: 1px solid transparent;
   color: #007bff;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+}
+@media (max-width: 576px) {
+  .project-card a {
+    display: block;
+    margin: 8px 0;
+    text-align: center;
+  }
 }
 
 .project-card a:hover {
@@ -219,6 +255,43 @@ main {
   -webkit-text-fill-color: transparent;
   border-color: currentColor;
 }
+
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 60px 20px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 column */
+    gap: 25px;
+    padding: 40px 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Badge-like small text */
 .border-text {
@@ -423,3 +496,71 @@ button {
 }
 
 
+
+
+
+
+
+/* ---------- GLOBAL RESPONSIVE ---------- */
+@media (max-width: 768px) {
+
+  /* Container padding smaller on phone */
+  .container {
+    padding: 30px !important;
+  }
+
+  /* Hero section */
+  .profile-pic {
+    width: 220px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+    text-align: center;
+  }
+
+  h1 span {
+    font-size: 2.2rem !important;
+  }
+
+  p.lead {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+
+  a.lead {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* About Me text */
+  section p {
+    font-size: 1rem !important;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  /* Cards */
+  .hobby-card {
+    padding: 10px;
+  }
+
+  .card-body img {
+    width: 40px !important;
+  }
+
+  h5, h6 {
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- LARGE DESKTOP ---------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}

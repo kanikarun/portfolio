@@ -10,61 +10,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-if (document.getElementById("particles-bg")) {
-  tsParticles.load("particles-bg", {
-    fullScreen: false,
-    background: {
-      color: "transparent"
-    },
-    particles: {
-      number: {
-        value: 18,
-        density: {
-          enable: true,
-          area: 800
-        }
-      },
-      color: {
-        value: ["#38bdf8", "#818cf8", "#f472b6"]
-      },
-      shape: {
-        type: "circle"
-      },
-      opacity: {
-        value: 0.35
-      },
-      size: {
-        value: {min: 80, max: 160}
-      },
-      move: {
-        enable: true,
-        speed: 0.6,
-        direction: "none",
-        random: true,
-        straight: false,
-        outModes: {
-          default: "out"
-        }
-      }
-    },
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: "repulse"
-        }
-      },
-      modes: {
-        repulse: {
-          distance: 120,
-          duration: 0.4
-        }
-      }
-    },
-    detectRetina: true
-  });
-
-}
 
 
   const form = document.getElementById("contactForm");
