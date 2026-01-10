@@ -226,7 +226,7 @@ main {
 
 /* Links inside card */
 .project-card a {
-  display: inline-flex;          /* ✔ inline, not full-width */
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
